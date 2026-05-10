@@ -274,7 +274,7 @@ void UpdateSensorsHistory() {
 }
 
 void BackToBall() {
-  aDriveRotation(abs(b_a) + 80, 255, -c_a);
+  aDriveRotation(abs(b_a) + 80, 255, gyro.x);
 }
 
 void timer(uint64_t millis) {
