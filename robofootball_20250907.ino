@@ -480,8 +480,7 @@ void GetCamera() {
 }
 
 void SwitchCamera(bool _isYellow) {
-  if(_isYellow) isYellow = true;
-  if(!_isYellow) isYellow = false;
+  isYellow = _isYellow;
 }
 
 void loop() {
