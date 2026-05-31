@@ -51,6 +51,8 @@ int clickTime;
 GButton b(37);
 int clickedButton = 1;
 bool isYellow;
+int yc_a = 0;
+int bc_a = 0;
 
 String mainScreenInfo[3];
 String mainMenuButtons[4];
@@ -474,8 +476,19 @@ void GetCamera() {
     while(Wire.available()) Wire.read(); // Toss garbage bytes.
   }
 
-  c_a = atoi(buff) / 1000;
-  // Serial.print(buff);
+  yc_a = atoi(buff) / 100;
+  bc_a = atoi(buff) % 100;
+
+  if(isYellow) c_a = yc_a;
+  else c_a = bc_a;
+
+  Serial.print("cam: ");
+  Serial.print(buff);
+  Serial.print(" yellow: ");
+  Serial.print(yc_a);
+  Serial.print(" blue: ");
+  Serial.println(bc_a);
+
   delay(1); // Don't loop to quickly.
 }
 
