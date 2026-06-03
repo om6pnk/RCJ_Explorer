@@ -479,15 +479,17 @@ void GetCamera() {
   yc_a = atoi(buff) / 100;
   bc_a = atoi(buff) % 100;
 
-  if(isYellow) c_a = yc_a;
-  else c_a = bc_a;
+  if(isYellow) c_a = yc_a - 30;
+  else c_a = bc_a - 30;
 
   Serial.print("cam: ");
   Serial.print(buff);
   Serial.print(" yellow: ");
   Serial.print(yc_a);
   Serial.print(" blue: ");
-  Serial.println(bc_a);
+  Serial.print(bc_a);
+  Serial.print(' ');
+  Serial.println(isYellow);
 
   delay(1); // Don't loop to quickly.
 }
